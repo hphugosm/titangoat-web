@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #050a14;
+}
+
+body {
+  @apply bg-abyss text-white antialiased;
+}
+
+::selection {
+  @apply bg-frost text-abyss;
+}
+
+/* Ledová textura pro obří nadpisy – gradient přes text */
+.ice-text {
+  background: linear-gradient(180deg, #ffffff 0%, #bfe7fb 35%, #4fc3f7 70%, #1565c0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pulzující ledový glow pro hlavní CTA */
+@keyframes frost-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 24px rgba(79, 195, 247, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 56px rgba(79, 195, 247, 0.7);
+  }
+}
+.frost-pulse {
+  animation: frost-pulse 2.4s ease-in-out infinite;
+}
+
+/* Jemný float loop pro levitující karty */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
